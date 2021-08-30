@@ -2,7 +2,10 @@ apply plugin: 'java'
 apply plugin: 'application'
 
 repositories {
-    jcenter()
+    maven {
+        url 'https://repo.maven.apache.org/maven2'
+        name 'Maven Central'
+    }
 }
 
 sourceSets {
@@ -17,13 +20,13 @@ sourceSets {
 }
 
 dependencies {
-    compile 'org.springframework:spring-aop:3.2.13.RELEASE',
-            'org.springframework:spring-beans:3.2.13.RELEASE',
-            'org.springframework:spring-context:3.2.13.RELEASE',
-            'org.springframework:spring-core:3.2.13.RELEASE',
-            'org.springframework:spring-expression:3.2.13.RELEASE'
+    implementation 'org.springframework:spring-aop:5.3.9'
+    implementation 'org.springframework:spring-beans:5.3.9'
+    implementation 'org.springframework:spring-context:5.3.9'
+    implementation 'org.springframework:spring-core:5.3.9'
+    implementation 'org.springframework:spring-expression:5.3.9'
 
-    testCompile 'junit:junit:4.8.2'
+    testImplementation 'junit:junit:4.13.2'
 }
 
 mainClassName = 'com.seriouscompany.business.java.fizzbuzz.packagenamingpackage.impl.Main'
